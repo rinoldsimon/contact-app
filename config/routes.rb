@@ -4,14 +4,19 @@ Rails.application.routes.draw do
  
   get 'follow' => 'users#follow'
   get 'unfollow' => 'users#unfollow'
+  get 'like' => 'users#like'
+  get 'unlike' => 'users#unlike'
   
   #resources :users
   resources :posts
+  resources :comments
 
   devise_for :users
 
   get 'home/index'
   root :to => 'home#index'
+
+  get '/users/:id', :to => 'users#show', :as => :user
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

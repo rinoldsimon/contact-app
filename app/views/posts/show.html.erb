@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<% if @post.content? %>
+<%= image_tag @post.user.avatar.url(:thumb), class: 'profile' %>
+<%= link_to @post.user.name, @post.user %>
+
 <p>
   <strong>Content:</strong>
   <%= @post.content %>
 </p>
-<%end%>
 
 <% if @post.avatar? %>
 <p>
@@ -16,3 +17,8 @@
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+
+<%= link_to pluralize(@comments.count, 'comment'), @post %>
+<%= render 'shared/like_form' %>
+<%= render 'shared/form' %>
+<%= render @comments  %>

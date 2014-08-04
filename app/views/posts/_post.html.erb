@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+ <%= image_tag @post.user.avatar.url(:thumb)%>
+ <%= link_to @post.user.name, @post.user %>
+    <%= @post.content %>
+  <%= image_tag @post.avatar.url if @post.avatar.exists? %>
+  <%= link_to pluralize(@post.comments.count, 'comment'), @post %>
