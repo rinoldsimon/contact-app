@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @post.comments
-    @likeable = @post
+    #@likeable = @post
   end
 
   # GET /posts/new
