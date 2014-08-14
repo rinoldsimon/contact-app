@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   get 'users/index'
   get 'users/show'
  
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   #resources :users
   resources :posts
   resources :comments
+  resources :infos
 
   devise_for :users
 

@@ -2,7 +2,10 @@
           <%= link_to 'Users', "users/index" %>
           <%= link_to 'Profile', current_user %>
           <%= link_to 'Edit account', edit_user_registration_path %>
-          <%= link_to "Sign-out", destroy_user_session_path, method: :delete %> 
+          <%= link_to "Sign-out", destroy_user_session_path, method: :delete %>
+          [Last Sign_in at:] <%=current_user.last_sign_in_at.to_time%>
+          [Sign_in count:] <%=current_user.sign_in_count %>
+          <%= link_to "Info","infos" %>
 <% end %>
 
 <%= render 'posts/form' %>
