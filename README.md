@@ -13,7 +13,7 @@
 - form for user personal info
 - foundation/twitter-bootstrap for UI
 - user login count for current_user
-- mention user in post and comments
+- tag user in post and comments
 - search for users, posts
 - notification tray
 - adding smileys
