@@ -1,1 +1,11 @@
+<h1>Users</h1>
+<%# form_tag(users_path, :method => "get", id: "search-form") do %>
+<form action="/users/index">
+
+  <p>
+    <%= text_field_tag :search, params[:search], placeholder: "Type User name"  %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+</form>
+<%# end %>
 <%= render @users %>

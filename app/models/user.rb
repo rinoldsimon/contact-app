@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
 
   has_many :infos
 
+def self.search(query)
+  where("name like ?", "%#{query}%") 
+end
+
 end
