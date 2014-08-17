@@ -25,4 +25,8 @@ class Post < ActiveRecord::Base
     tracked owner: ->(controller, model) { controller && controller.current_user }
 
     acts_as_likeable
+
+    def self.search(query)
+     where("content like ?", "%#{query}%") 
+    end
 end
