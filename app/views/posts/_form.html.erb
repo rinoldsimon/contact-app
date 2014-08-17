@@ -21,6 +21,21 @@
     <%= f.file_field :avatar %>
   </div>
 
+  <div class="field">
+    <%= f.label "Upload video (optional)" %><br>
+    <%= f.file_field :video %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Upload audio (optional)" %><br>
+    <%= f.file_field :audio %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Upload file (optional)" %><br>
+    <%= f.file_field :file %>
+  </div> 
+
   <div class="actions">
     <%= f.submit %>
   </div>

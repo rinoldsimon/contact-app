@@ -7,12 +7,38 @@
   <%= @post.content %>
 </p>
 
-<% if @post.avatar? %>
+<% if @post.video? %>
 <p>
-  <strong>Attachment:</strong><br>
-  <%= image_tag @post.avatar.url(:medium) %>
+  <strong>Video:</strong><br>
+  <div class="flex-video">
+  <video width="330" height="220" controls="controls" preload="preload">
+    <source src="<%= @post.video.url %>" type="video/mp4; codecs="avc1.42E01E, mp4a.40.2"">
+  </video>
+  </div>
+  <%# video_tag @post.avatar.url(:medium) %>
 </p>
 <% end %>
+
+<% if @post.avatar?%>
+<p>
+  <strong>Avatar:</strong><br>
+  <%= image_tag @post.avatar.url(:medium) %>
+</p>
+<%end%>
+
+<% if @post.audio?%>
+<p>
+  <strong>Audio:</strong><br>
+  <audio width="330" height="220" controls="controls" preload="preload"><source src = "<%= @post.audio.url %>"> </audio>
+</p>
+<%end%>
+
+<% if @post.file?%>
+<p>
+  <strong>File:</strong><br>
+  <%= link_to "Click here to download file", @post.file.url %>
+</p>
+<%end%>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

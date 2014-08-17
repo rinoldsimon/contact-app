@@ -49,3 +49,4 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem "paperclip-ffmpeg"
 gem "socialization"
 gem 'public_activity'
+#gem 'carrierwave'
