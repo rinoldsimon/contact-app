@@ -6,10 +6,10 @@ gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
 group :production do
     gem 'pg'
+    gem 'rails_12factor'
 end
 group :development do
     gem 'sqlite3'
-    gem 'rails_12factor'
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -45,8 +45,17 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+# File-attachment {
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem "paperclip-ffmpeg"
+# }
 gem "socialization"
 gem 'public_activity'
-#gem 'carrierwave'
+# Front-end {
+gem 'bootstrap-sass'
+# }
+# Forms, mail {
+gem 'mail_form'
+gem 'simple_form'
+# }
+gem 'email_validator'

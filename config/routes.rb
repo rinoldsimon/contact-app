@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  resources :feedbacks
+
+  resources :contacts
+
   get 'users/index'
   get 'users/show'
  

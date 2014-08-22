@@ -10,11 +10,9 @@
 <% if @post.video? %>
 <p>
   <strong>Video:</strong><br>
-  <div class="flex-video">
   <video width="330" height="220" controls="controls" preload="preload">
     <source src="<%= @post.video.url %>" type="video/mp4; codecs="avc1.42E01E, mp4a.40.2"">
   </video>
-  </div>
   <%# video_tag @post.avatar.url(:medium) %>
 </p>
 <% end %>

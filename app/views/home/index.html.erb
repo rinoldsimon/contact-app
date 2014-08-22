@@ -6,6 +6,8 @@
           [Last Sign_in at:] <%=current_user.last_sign_in_at.to_time%>
           [Sign_in count:] <%=current_user.sign_in_count %>
           <%= link_to "Info","infos" %>
+          <%= link_to "Contact Us","contacts/new" %>
+          <%= link_to "Feedback","feedbacks/new" %>
 <% end %>
 
 <%= render 'posts/form' %>

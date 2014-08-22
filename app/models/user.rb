@@ -22,4 +22,7 @@ def self.search(query)
   where("name like ?", "%#{query}%") 
 end
 
+ has_many :contacts
+ has_many :feedbacks
+
 end

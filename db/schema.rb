@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140817072926) do
+ActiveRecord::Schema.define(version: 20140822162928) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -40,6 +40,22 @@ ActiveRecord::Schema.define(version: 20140817072926) do
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "contacts", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "feedbacks", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "follows", force: true do |t|
     t.string   "follower_type"
