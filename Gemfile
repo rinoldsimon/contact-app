@@ -53,6 +53,9 @@ gem "socialization"
 gem 'public_activity'
 # Front-end {
 gem 'bootstrap-sass'
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 # }
 # Forms, mail {
 gem 'mail_form'

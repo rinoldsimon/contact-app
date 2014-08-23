@@ -1,12 +1,14 @@
 class HomeController < ApplicationController
 
-before_action :authenticate_user!
+#before_action :authenticate_user!
 
   def index
 	@post = Post.new
 
-    unless current_user.followees(User).empty?
-	followees_ids = current_user.followees(User).map(&:id)
+    if user_signed_in?
+    	unless current_user.followees(User).empty?
+		followees_ids = current_user.followees(User).map(&:id)
+    	end
     end
     
         #get only the ids of the people current_user folllows

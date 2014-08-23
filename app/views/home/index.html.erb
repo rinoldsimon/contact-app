@@ -8,9 +8,9 @@
           <%= link_to "Info","infos" %>
           <%= link_to "Contact Us","contacts/new" %>
           <%= link_to "Feedback","feedbacks/new" %>
-<% end %>
 
 <%= render 'posts/form' %>
+<% end %>
 
 <% @activities.each do |activity| %>
     <%= render_activity(activity) %>

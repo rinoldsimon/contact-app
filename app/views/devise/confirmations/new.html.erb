@@ -1,12 +1,49 @@
-<h2>Resend confirmation instructions</h2>
+<script type="text/javascript">
+    $(window).load(function(){
+    $('#myModal').modal('show');
+    });
+</script>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Resend confirmation instructions</h4>
+      </div>
+      <div class="modal-body">
 
+<center>
+<table>
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+<style>
+ tr {
+   height:40px;
+ }
+ td {
+   width:50px;
+ }
+</style>
+<tr>
+  <td><div><%= f.label :email %></td>
+  <td><%= f.email_field :email, autofocus: true %></div></td>
+</tr>
+<tr>
+  <td></td>
+  <td><div><button class="btn btn-primary btn-lg" action="submit">Resend confirmation instructions</button></div></td>
+</tr>
+</table>
 
-  <div><%= f.submit "Resend confirmation instructions" %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</center>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
