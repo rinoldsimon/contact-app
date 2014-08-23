@@ -1,0 +1,70 @@
+<% if user_signed_in? %>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Home</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><button type="button" class="btn btn-default navbar-btn" onClick="window.location.href='/users/index'">Peoples</button></li>
+        <li><%= link_to 'Activity', current_user %></li>
+
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown">Info <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><h4><span width="100"class="label label-default">Last Signed-in</span></h4></li>
+            <li class="divider"></li>
+            
+            <table>
+            <tr>
+              <td><li><h5><span class="label label-default">Date:</span></td>
+              <td><%=current_user.last_sign_in_at.to_date%></li></td>
+            </tr>
+            <tr>
+              <td><li><h5><span class="label label-default">Time:</span></td>
+              <td><%=current_user.last_sign_in_at.strftime("%H:%M:%S")%></li></td>
+            <tr>
+            </tr>
+              <td><li><h5><span class="label label-default">Count:</span></td>
+              <td><%=current_user.sign_in_count %></li></td>
+            </tr>
+            </table>
+            <li class="divider"></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+
+  <li>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default navbar-btn">Settings</button>
+      <button type="button" class="btn btn-default dropdown-toggle navbar-btn" data-toggle="dropdown">
+      <span class="caret"></span>
+      <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+      <li><a href="" onClick="window.location.href='/users/edit'">Edit Account</a></li>
+      <li><a href="/infos">Personal Info</a></li>
+      <li class="divider"></li>
+      <li><a href="/contacts/new">Contact Us</a></li>
+      <li><a href="/feedbacks/new">Feedback</a></li>
+      </ul>
+    </div>
+  </li>
+</ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<% end %>
