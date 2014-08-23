@@ -41,13 +41,17 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-        :address => "smtp.gmail.com",
+        :address => "smtp.mandrillapp.com",
         :port    => 587,
-        :domain  => "gmail.com",
-        :user_name  => "xxxxxxxx@xxxxx.com",
-        :password   => "xxxxxxx",
+        :domain  => "heroku.com",
+        :user_name  => "crisrinold@gmail.com",
+        :password   => "-R8pMm9TtJUpyvU44DGtbg",
         :authentication => :plain,
         :enable_starttls_auto => true
       }
+
+  MandrillMailer.configure do |config|
+  config.api_key = ENV['-R8pMm9TtJUpyvU44DGtbg']
+  end
 
 end
