@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FbApp</title>
+  <title>SocialApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<% unless user_signed_in? %>
-<button class="btn btn-primary btn-lg" onClick="window.location.href='/users/sign_in'">
-  Sign in
-</button>
-
-<button class="btn btn-primary btn-lg" onClick="window.location.href='/users/sign_up'">
-  Sign up
-</button>
-<% end %>
-
+<%= render '/layouts/landing_page' %>
 <%= render '/layouts/navbar' %>
 <%= render '/layouts/messages' %>
 
 <%= yield %>
+
+<% unless user_signed_in? %>
+<style>
+.modal { background: url('/images/bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    }
+</style>
+<% end %>
 
 </body>
 </html>
