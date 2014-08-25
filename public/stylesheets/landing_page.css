@@ -168,6 +168,8 @@ footer p {
 
     .nav>li>a {
         padding: 35px;
+        font-size: 20px;
+        font-weight: bold;
     }
 
     .navbar-nav>li>a {
