@@ -8,22 +8,21 @@
 - likes for post
 - follow user
 - news feed for current_user
+- form for user personal info
+- search for users, posts
+- feedback page and contact-us page
+- login count, last signed-in for current_user
 
 #### still to be done
-- form for user personal info
-- foundation/twitter-bootstrap for UI
-- user login count for current_user
 - tag user in post and comments
-- search for users, posts
 - notification tray
-- adding smileys
 - adding comments and likes for user comments
 - sending messages to users registered
 - simple chat
+- adding smileys to chat
 - top post
 - creating events
 - user birthday notification
-- adding feedback page
 
 #### get this app
 

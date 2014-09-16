@@ -4,6 +4,27 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+#wrapper {
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    display: inline-block;
+    
+}
+
+
+#sidebar-wrapper {
+    height: 100%;
+    padding: 10px 0 0px 0;
+    position: fixed;
+    border-right: 1px solid gray;
+    background-color: #000000;
+}
+
+
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -330,6 +351,8 @@ img {
 }
 .img-circle {
   border-radius: 50%;
+  width: 140px;
+  height: 140px;
 }
 hr {
   margin-top: 20px;

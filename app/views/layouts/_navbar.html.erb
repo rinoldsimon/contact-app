@@ -9,68 +9,74 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Home</a>
+      <a class="navbar-brand" href="/"><font color="white"><i class="fa fa-home"></i></font></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/users/index">Peoples</a></li>
-        <li><%= link_to 'Activity', current_user %></li>
-
-        <li class="dropdown">
-          <a href="" class="dropdown-toggle" data-toggle="dropdown">Info <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><h4><span width="100"class="label label-default">Last Signed-in</span></h4></li>
-            <li class="divider"></li>
-            
-            <table>
-            <tr>
-              <td><li><h5><span class="label label-default">Date:</span></h5></td>
-              <td><%=current_user.last_sign_in_at.to_date%></li></td>
-            </tr>
-            <tr>
-              <td><li><h5><span class="label label-default">Time:</span></h5></td>
-              <td><%=current_user.last_sign_in_at.to_time.strftime("%H:%M:%S")%></li></td>
-            <tr>
-            </tr>
-              <td><li><h5><span class="label label-default">Count:</span></h5></td>
-              <td><%=current_user.sign_in_count %></li></td>
-            </tr>
-            </table>
-            <li class="divider"></li>
-          </ul>
-        </li>
+        <li><a href="/users/index"><i class="fa fa-users"></i> <font color="white">Peoples</font></a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
 
-  <li>
-    <div class="btn-group">
-      <button type="button" class="btn btn-default navbar-btn">Settings</button>
-      <button type="button" class="btn btn-default dropdown-toggle navbar-btn" data-toggle="dropdown">
-      <span class="caret"></span>
-      <span class="sr-only">Toggle Dropdown</span>
-      </button>
+      <li class="dropdown user-dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><%= link_to '<i class="fa fa-calendar"></i> Activity'.html_safe, current_user %></li>
+                            <li><a href="/infos"><i class="fa fa-info-circle"></i> Personal Info</a></li>
+                            <li class="divider"></li>
+                            <li><%= link_to '<i class="fa fa-power-off"></i> Log out'.html_safe, destroy_user_session_path, method: :delete %></li>
+
+                        </ul>
+      </li>
+
+  <li class="dropdown user-dropdown">
+      <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> <b class="caret"></b></a>
       <ul class="dropdown-menu" role="menu">
-      <li><a href="" onClick="window.location.href='/users/edit'">Edit Account</a></li>
-      <li><a href="/infos">Personal Info</a></li>
+      <li><a href="" onClick="window.location.href='/users/edit'"><i class="fa fa-pencil fa-fw"></i> Edit Account</a></li>
       <li class="divider"></li>
-      <li><a href="/contacts/new">Contact Us</a></li>
-      <li><a href="/feedbacks/new">Feedback</a></li>
+      <li><a href="/contacts/new"><i class="fa fa-mail-forward"></i> Contact Us</a></li>
+      <li><a href="/feedbacks/new"><i class="fa fa-quote-left"></i> Feedback</a></li>
       </ul>
-    </div>
   </li>
 </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<div id="wrapper">
+  <div id="sidebar-wrapper" class="col-md-2">
+            <div id="sidebar">
+               <div class="text-center">
+
+               <% if current_user.avatar? %>
+               <img src="<%= current_user.avatar %>" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+               <% else %>
+               <img src="images/missing.jpg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+               <% end %>
+
+               <h4><%= current_user.name %></h4>
+               </div>
+
+               <h3>
+               <span class="text-muted">Last visit</span><br>
+               <i class="fa fa-calendar"></i> <%=current_user.last_sign_in_at.to_date%>
+               <br>
+               <i class="fa fa-calendar-o"></i> <%=current_user.last_sign_in_at.to_time.strftime("%H:%M:%S")%>
+               <br>
+               <i class="fa fa-bar-chart-o"></i> <%=current_user.sign_in_count %>
+               </h3>
+               
+            </div>
+        </div>
+        
+</div>
 
 <% end %>
