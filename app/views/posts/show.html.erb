@@ -1,3 +1,6 @@
+<br><br><br><br>
+<div id="main-wrapper" class="col-md-10 pull-right">
+<div id="main">
 
 <%= image_tag @post.user.avatar.url(:thumb), class: 'profile' %>
 <%= link_to @post.user.name, @post.user %>
@@ -47,3 +50,6 @@
 <%= pluralize(@post.likers(User).count, 'like')%>
 <%= render 'shared/form' %>
 <%= render @comments  %>
+
+</div>
+</div>

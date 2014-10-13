@@ -5,7 +5,7 @@
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
 </head>
 
-<nav class="navbar navbar-inverse" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -62,17 +62,25 @@
                <img src="images/missing.jpg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
                <% end %>
 
-               <h4><%= current_user.name %></h4>
+               <h4><font color="white"><%= current_user.name %></font></h4>
                </div>
 
-               <h3>
+              
                <span class="text-muted">Last visit</span><br>
                <i class="fa fa-calendar"></i> <%=current_user.last_sign_in_at.to_date%>
                <br>
                <i class="fa fa-calendar-o"></i> <%=current_user.last_sign_in_at.to_time.strftime("%H:%M:%S")%>
                <br>
                <i class="fa fa-bar-chart-o"></i> <%=current_user.sign_in_count %>
-               </h3>
+
+                <ul>
+                  <li>
+                  <i class="fa fa-calendar"></i>
+                  <span><%=current_user.last_sign_in_at.to_date%></span>
+                  <small class="badge bg-red">3</small>
+                   
+                  </li>
+                </ul>
                
             </div>
         </div>
