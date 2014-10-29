@@ -1,13 +1,25 @@
-<div id="main-wrapper" class="col-md-10 pull-right">
-<div id="main">
-
 <% if user_signed_in? %>
-<%= render 'posts/form' %>
+<% if notice || alert %>
+<div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <strong>
+    <%= notice %>
+	<%= alert %>
+  </strong>
+</div>
 <% end %>
 
-<% @activities.each do |activity| %>
-    <%= render_activity(activity) %>
-<% end %>
+<br>
+<div class="container" style="padding-top: 5%">
+        <div class="row">
 
+            <div class="col-md-3">
+                <p class="lead">Categories</p>
+                <div class="list-group">
+                    <a href="/contacts/new" class="list-group-item">Contact Me</a>
+                    <a href="/feedbacks/new" class="list-group-item">Feedback</a>
+                </div>
+            </div>
+        </div>
 </div>
-</div>
+<% end %>

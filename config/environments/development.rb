@@ -36,14 +36,12 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
-  Paperclip.options[:command_path] = "/usr/bin/"
-  Paperclip.options[:command_path] = "/usr/local/bin/"
 
   config.action_mailer.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
         :address => "smtp.mandrillapp.com",
         :port    => 587,
-        :domain  => "heroku.com",
+        :domain  => "localhost:3000",
         :user_name  => "crisrinold@gmail.com",
         :password   => "-R8pMm9TtJUpyvU44DGtbg",
         :authentication => :plain,
