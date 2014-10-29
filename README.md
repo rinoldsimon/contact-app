@@ -1,7 +1,9 @@
 ## setting up mandrill in Rails~4
 
 #### app includes
-- user management
+- user login confirmation
+- unlock instructions
+- forgot password
 - feedback page
 - contact-me page
 
