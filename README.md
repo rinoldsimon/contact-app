@@ -18,4 +18,4 @@ Switch to `localhost:3000` in your browser
 
 #### heroku
 
-app will be soon online ;)
+http://contact-application.herokuapp.com
