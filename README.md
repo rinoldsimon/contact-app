@@ -10,8 +10,8 @@
 #### get this app
 
 ```
-git clone git@github.com:rinoldsimon/fb-app.git
-cd fb-app
+git clone git@github.com:rinoldsimon/contact-app.git
+cd contact-app
 bundle install
 rake db:migrate
 rails server
