@@ -3,6 +3,6 @@ class ContactMailer < ActionMailer::Base
 
   def contact_email(contact)
     @contact = contact
-    mail(to: "crisrinold@gmail.com", subject: 'Fb-app Contact-me : Email Notify')
+    mail(to: "crisrinold@gmail.com", subject: 'Contact-me : Email Notify')
   end
 end

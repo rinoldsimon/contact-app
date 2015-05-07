@@ -3,6 +3,6 @@ class FeedbackMailer < ActionMailer::Base
 
   def feedback_email(feedback)
     @feedback = feedback
-    mail(to: "crisrinold@gmail.com", subject: 'Fb-app Feedback : Email Notify')
+    mail(to: "crisrinold@gmail.com", subject: 'Feedback : Email Notify')
   end
 end
